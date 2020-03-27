@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const rand = (min, max) => {
+            return Math.round(Math.random() * (max - min)) + min;
+        }
+
+        // 空陣列是讓其中 1~38 裡的 6 個數字帶入 =>  let arry = [(1,38),(1,38),(1,38),(1,38),(1,38),(1,38)]
+        let arry = []
+        // 宣告一個隨機的新變數
+        let a = rand(1, 38);
+        for (let i = 0; i < 6; i++) {
+            while (arry.includes(a)) {
+                // rand(1,38)為隨機一個數字
+                a = rand(1, 38);
+            }
+            arry.push(a);
+            a = rand(1, 38);
+        }
+        document.write(`第一區號碼：${arry}<br/>`);
+        document.write(`第二區號碼：${rand(1, 8)}`)
+
+        // 假如 a 為 20，進入 for 迴圈裡
+        // while 迴圈是 true 繼續執行，false 跳出迴圈
+        // 當陣列有包含 20 這數字， 而 a = 隨機數字的其中一個數字時，則會進入迴圈在執行一次，直到 != 20
+        // 最後的  a = rand(1, 38) ， a 則為另一個新的數字，再進入 for 迴圈
+
+
+    </script>
+</body>
+
+</html>
